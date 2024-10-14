@@ -12,7 +12,7 @@ public class NxCodeUI : ModuleRules
 			new string[] {
 				// ... add public include paths required here ...
 			}
-			);
+			); 
 				
 		
 		PrivateIncludePaths.AddRange(
