@@ -3,7 +3,7 @@
 
 #include "SLoadingScreenLayout.h"
 
-struct FNxAsyncLoadingScreen;
+struct FNxLoadingSplashScreen;
 struct FNxDualSidebarLayoutSettings;
 
 /**
@@ -19,5 +19,5 @@ public:
 	/**
 	 * Construct this widget
 	 */
-	void Construct(const FArguments& InArgs, const FNxAsyncLoadingScreen& Settings, const FNxDualSidebarLayoutSettings& LayoutSettings);
+	void Construct(const FArguments& InArgs, const FNxLoadingSplashScreen& Settings, const FNxDualSidebarLayoutSettings& LayoutSettings);
 };

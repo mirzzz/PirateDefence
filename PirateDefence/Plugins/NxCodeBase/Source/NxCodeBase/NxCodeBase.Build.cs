@@ -39,11 +39,12 @@ public class NxCodeBase : ModuleRules
 			new string[]
 			{
 				"Core",
-				// ... add other public dependencies that you statically link with here ...
-
 				"XmlParser",        // support xml
                 "Json",             // support json
-			}
+
+                // ... add other public dependencies that you statically link with here ...
+                // Á¾¼Ó¼º 
+                "NxCodeBasePrev",			}
 			);
 
 

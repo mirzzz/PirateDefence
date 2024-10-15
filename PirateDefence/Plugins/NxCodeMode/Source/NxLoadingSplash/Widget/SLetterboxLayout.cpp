@@ -9,7 +9,7 @@
 #include "STipWidget.h"
 #include "SLoadingCompleteText.h"
 
-void SLetterboxLayout::Construct(const FArguments& InArgs, const FNxAsyncLoadingScreen& Settings, const FNxLetterboxLayoutSettings& LayoutSettings)
+void SLetterboxLayout::Construct(const FArguments& InArgs, const FNxLoadingSplashScreen& Settings, const FNxLetterboxLayoutSettings& LayoutSettings)
 {
 	// Root widget and background
 	TSharedRef<SOverlay> Root = SNew(SOverlay)

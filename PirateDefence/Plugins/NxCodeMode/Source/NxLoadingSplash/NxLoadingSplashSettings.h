@@ -7,7 +7,6 @@
 #include "Widgets/Layout/SScaleBox.h"
 #include "Styling/SlateBrush.h"
 #include "Framework/Text/TextLayout.h"
-#include "NxBaseEnum.h"
 #include "NxLoadingSplashSettings.generated.h"
 
  // 비동기 로딩 레이아웃 종류
@@ -344,7 +343,7 @@ struct NXLOADINGSPLASH_API FNxLoadingCompleteTextSettings
 
  // 로딩 화면 설정
 USTRUCT(BlueprintType)
-struct NXLOADINGSPLASH_API FNxAsyncLoadingScreen
+struct NXLOADINGSPLASH_API FNxLoadingSplashScreen
 {
 	GENERATED_BODY()	
 
@@ -673,11 +672,11 @@ public:
 		
 	// 게임을 처음 실행했을 때의 시작 로딩 화면입니다. 여기에서 스튜디오 로고 동영상을 설정하세요.
 	UPROPERTY(Config, EditAnywhere, Category = "LoadingSplash", meta = (EditCondition = "bUseAsyncLoading==True"))
-	FNxAsyncLoadingScreen StartupLoadingSettings;
+	FNxLoadingSplashScreen StartupLoadingSettings;
 		
 	// 새로운 레벨을 열 때마다 나타나는 기본 로딩 화면-Static 버전
 	UPROPERTY(Config, EditAnywhere, Category = "LoadingSplash", meta = (EditCondition = "bUseAsyncLoading==True"))
-	FNxAsyncLoadingScreen DefaultLoadingSettings;
+	FNxLoadingSplashScreen DefaultLoadingSettings;
 
 	// 클래식 레이아웃 설정.
 	//	클래식은 단순하고 일반적인 레이아웃이며 다양한 디자인에 잘 맞습니다.

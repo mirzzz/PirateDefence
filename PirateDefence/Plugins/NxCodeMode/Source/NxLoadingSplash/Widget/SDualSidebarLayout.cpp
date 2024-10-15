@@ -10,7 +10,7 @@
 #include "STipWidget.h"
 #include "SLoadingCompleteText.h"
 
-void SDualSidebarLayout::Construct(const FArguments& InArgs, const FNxAsyncLoadingScreen& Settings, const FNxDualSidebarLayoutSettings& LayoutSettings)
+void SDualSidebarLayout::Construct(const FArguments& InArgs, const FNxLoadingSplashScreen& Settings, const FNxDualSidebarLayoutSettings& LayoutSettings)
 {
 	// Root widget and background
 	TSharedRef<SOverlay> Root = SNew(SOverlay)

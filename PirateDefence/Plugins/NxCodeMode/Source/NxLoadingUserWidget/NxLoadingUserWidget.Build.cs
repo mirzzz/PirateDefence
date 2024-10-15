@@ -35,9 +35,11 @@ public class NxLoadingUserWidget : ModuleRules
 				"Core",
 
 				// ... add other public dependencies that you statically link with here ...
-				"CommonUI",                
-            }
-			);
+				
+				// 종속성 설정.
+                "NxCodeBase",                
+                "NxLoadingSplash",
+            });
 			
 		
 		PrivateDependencyModuleNames.AddRange(
@@ -56,11 +58,8 @@ public class NxLoadingUserWidget : ModuleRules
                 "RenderCore",
                 "Projects",				// IPluginManager
                 "UMG",
-
-                "NxCodeBase",
-                "NxLoadingSplash",
-            }
-			);
+                "CommonUI",
+            });
 				
 		DynamicallyLoadedModuleNames.AddRange(
 			new string[]

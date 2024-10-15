@@ -4,7 +4,7 @@
 	"VersionName": "1.0",
 	"FriendlyName": "NxCodeMode",
 	"Description": "",
-	"Category": "Other",
+	"Category": "Nx",
 	"CreatedBy": "",
 	"CreatedByURL": "",
 	"DocsURL": "",
@@ -13,7 +13,7 @@
 	"CanContainContent": true,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
-	"Installed": false,
+	"Installed": false,	
 	"Modules": [
 		{
 			"Name": "NxCodeMode",
@@ -21,20 +21,22 @@
 			"LoadingPhase": "Default"
 		},
 		{
+			"Name": "NxCodeModeEditor",
+			"Type" : "Editor",
+			"LoadingPhase" : "Default"
+		},
+		{
 			"Name": "NxLoadingSplash",
 			"Type" : "Runtime",
-			"LoadingPhase" : "PreLoadingScreen",
-			"TargetDenyList" : [
-				"Server"
-			]
+			"LoadingPhase" : "PreLoadingScreen"
 		},
 		{
 			"Name": "NxLoadingUserWidget",
 			"Type" : "Runtime",
 			"LoadingPhase" : "Default"
-		}
-	],
-	"Plugins": [
+		},
+	],	
+	"Plugins" : [
 		{
 			"Name": "NxCodeBase",
 			"Enabled" : true

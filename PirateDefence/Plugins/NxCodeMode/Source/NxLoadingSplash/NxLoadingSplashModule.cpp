@@ -105,7 +105,7 @@ void FNxLoadingSplashModule::PreSetupLoadingScreen()
 	}
 }
 
-void FNxLoadingSplashModule::SetupLoadingScreen(const FNxAsyncLoadingScreen& LoadingScreenSettings)
+void FNxLoadingSplashModule::SetupLoadingScreen(const FNxLoadingSplashScreen& LoadingScreenSettings)
 {
 	NxPrintDisplay(LogLoading, TEXT("SetupLoadingScreen"));
 

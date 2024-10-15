@@ -15,12 +15,12 @@ UNxLoadingUserWidgetSettings::UNxLoadingUserWidgetSettings(const FObjectInitiali
 
 FText UNxLoadingUserWidgetSettings::GetSectionText() const
 {
-	return LOCTEXT("VxWidgetLoadingSettingsName", "Plugin VxLoadingWidget");
+	return LOCTEXT("VNxLoadingUserWidgetSettingsName", "Plugin NxLoadingUserWidget");
 }
 
 FText UNxLoadingUserWidgetSettings::GetSectionDescription() const
 {
-	return LOCTEXT("VxWidgetLoadingSettingsDescription", "Kakao-PlugIn VxLoadingWidget 설정");
+	return LOCTEXT("NxLoadingUserWidgetSettingsDescription", "LoadingUserWidget User Layeout 설정");
 }
 
 void UNxLoadingUserWidgetSettings::PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent)

@@ -35,10 +35,12 @@ public class NxLoadingSplash : ModuleRules
 			new string[]
 			{
 				"Core",
+
 				// ... add other public dependencies that you statically link with here ...
-            }
-			);
-			
+				// 종속성 설정.
+				// "LoadingPhase" : "PreLoadingScreen", 모듈을 로딩하므로, NxCodeBase 모듈을 참조할수 없음.
+				"NxCodeBase"
+			});
 		
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
@@ -55,8 +57,6 @@ public class NxLoadingSplash : ModuleRules
                 "PreLoadScreen",
                 "RenderCore",
                 "Projects",			// IPluginManager                
-
-				"NxCodeBase",
             }
 			);		
 		

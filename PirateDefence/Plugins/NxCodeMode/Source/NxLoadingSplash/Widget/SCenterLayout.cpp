@@ -12,7 +12,7 @@
 #include "SLoadingCompleteText.h"
 
 
-void SCenterLayout::Construct(const FArguments& InArgs, const FNxAsyncLoadingScreen& Settings, const FNxCenterLayoutSettings& LayoutSettings)
+void SCenterLayout::Construct(const FArguments& InArgs, const FNxLoadingSplashScreen& Settings, const FNxCenterLayoutSettings& LayoutSettings)
 {
 	// Root widget and background
 	TSharedRef<SOverlay> Root = SNew(SOverlay)

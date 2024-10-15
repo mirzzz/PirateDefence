@@ -49,7 +49,8 @@ public class NxCodeModeEditor : ModuleRules
 				// ... add other public dependencies that you statically link with here ...
 
                 "NxCodeBase",
-			});
+                "NxCodeMode",
+            });
 
         PrivateIncludePathModuleNames.AddRange(
             new string[] {

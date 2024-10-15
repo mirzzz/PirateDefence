@@ -4,9 +4,9 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
 
-struct FNxAsyncLoadingScreen;
+struct FNxLoadingSplashScreen;
 
-class FNxLoadingSplashModule : public IModuleInterface
+class  FNxLoadingSplashModule : public IModuleInterface
 {
 public:
 
@@ -78,7 +78,7 @@ private:
 	/**
 	 * 로딩 화면 설정값 세팅
 	 */
-	void SetupLoadingScreen(const FNxAsyncLoadingScreen& LoadingScreenSettings);
+	void SetupLoadingScreen(const FNxLoadingSplashScreen& LoadingScreenSettings);
 
 	/**
 	 * 무비 목록을 섞습니다.

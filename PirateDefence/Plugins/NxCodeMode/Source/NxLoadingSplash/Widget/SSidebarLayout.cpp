@@ -11,7 +11,7 @@
 #include "SLoadingCompleteText.h"
 #include "Widgets/SBoxPanel.h"
 
-void SSidebarLayout::Construct(const FArguments& InArgs, const FNxAsyncLoadingScreen& Settings, const FNxSidebarLayoutSettings& LayoutSettings)
+void SSidebarLayout::Construct(const FArguments& InArgs, const FNxLoadingSplashScreen& Settings, const FNxSidebarLayoutSettings& LayoutSettings)
 {
 	// Root widget and background
 	TSharedRef<SOverlay> Root = SNew(SOverlay)
