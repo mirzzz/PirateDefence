@@ -27,7 +27,9 @@ public class NxCodeMode : ModuleRules
 			{
 				"Core",
 				// ... add other public dependencies that you statically link with here ...
-			}
+				"NxCodeBasePrev",
+                "NxCodeBase",
+            }
 			);
 			
 		
@@ -38,7 +40,7 @@ public class NxCodeMode : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
-				// ... add private dependencies that you statically link with here ...	
+				// ... add private dependencies that you statically link with here ...					
 			}
 			);
 		

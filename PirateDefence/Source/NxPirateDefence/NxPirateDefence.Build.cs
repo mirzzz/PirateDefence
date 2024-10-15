@@ -69,7 +69,8 @@ public class NxPirateDefence : ModuleRules
             "CommonInput",
             "CommonUI",
 
-            // 프로젝트 PlugIn은 자동으로 포함된다.
+            // 프로젝트 PlugIn은 자동 포함되므로, Module만 등록한다.
+            "NxCodeBasePrev",
             "NxCodeBase",
             "NxCodeMode",
             "NxLoadingSplash",
