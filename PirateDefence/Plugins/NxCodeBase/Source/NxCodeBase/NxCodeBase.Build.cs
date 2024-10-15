@@ -21,9 +21,7 @@ public class NxCodeBase : ModuleRules
                 Path.Combine(ModuleDirectory, "Table"),
                 Path.Combine(ModuleDirectory, "Settings"),
                 Path.Combine(ModuleDirectory, "Network"),
-                Path.Combine(ModuleDirectory, "Function"),
-                Path.Combine(ModuleDirectory, "Loading"),
-                Path.Combine(ModuleDirectory, "Patcher"),
+                Path.Combine(ModuleDirectory, "Function"),                
             }
 			);
 

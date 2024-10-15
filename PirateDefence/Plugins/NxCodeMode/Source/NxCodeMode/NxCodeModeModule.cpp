@@ -1,6 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "NxCodeMode.h"
+#include "NxCodeModeModule.h"
 
 #define LOCTEXT_NAMESPACE "FNxCodeModeModule"
 

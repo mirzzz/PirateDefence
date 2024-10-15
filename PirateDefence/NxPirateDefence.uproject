@@ -17,6 +17,26 @@
 			"TargetAllowList": [
 				"Editor"
 			]
-		}
+		},
+		{
+			"Name": "CommonUI",
+			"Enabled" : true
+		},
+		{
+			"Name": "EnhancedInput",
+			"Enabled" : true
+		},
+		{
+			"Name": "OnlineFramework",
+			"Enabled" : true
+		},
+		{
+			"Name": "AudioModulation",
+			"Enabled" : true
+		},
+		{
+			"Name": "Metasound",
+			"Enabled" : true
+		},
 	]
 }

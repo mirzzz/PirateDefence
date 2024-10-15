@@ -19,6 +19,29 @@
 			"Name": "NxCodeMode",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "NxLoadingSplash",
+			"Type" : "Runtime",
+			"LoadingPhase" : "PreLoadingScreen",
+			"TargetDenyList" : [
+				"Server"
+			]
+		},
+		{
+			"Name": "NxLoadingUserWidget",
+			"Type" : "Runtime",
+			"LoadingPhase" : "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "NxCodeBase",
+			"Enabled" : true
+		},
+		{
+			"Name": "CommonUI",
+			"Enabled" : true
 		}
 	]
 }
