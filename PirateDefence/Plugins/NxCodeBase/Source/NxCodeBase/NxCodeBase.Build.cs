@@ -15,6 +15,7 @@ public class NxCodeBase : ModuleRules
 				// ... add public include paths required here ...
 				ModuleDirectory,
 				// 외부 모듈에서 경로를 넣지 않고 헤더 파일을 바로 Include 하려면 경로 추가 해줌.
+                Path.Combine(ModuleDirectory, "Frame"),
                 Path.Combine(ModuleDirectory, "Utility"),
                 Path.Combine(ModuleDirectory, "Function"),
                 Path.Combine(ModuleDirectory, "Table"),

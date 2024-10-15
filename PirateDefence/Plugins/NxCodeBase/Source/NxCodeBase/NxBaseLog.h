@@ -16,9 +16,10 @@
 NXCODEBASE_API DECLARE_LOG_CATEGORY_EXTERN(LogBase,		Log, All);			
 NXCODEBASE_API DECLARE_LOG_CATEGORY_EXTERN(LogState,	Log, All);
 NXCODEBASE_API DECLARE_LOG_CATEGORY_EXTERN(LogTable,	Log, All);
-NXCODEBASE_API DECLARE_LOG_CATEGORY_EXTERN(LogNetwork,	Log, All);		// UE 정의되어있음		
+NXCODEBASE_API DECLARE_LOG_CATEGORY_EXTERN(LogNetwork,	Log, All);		
 NXCODEBASE_API DECLARE_LOG_CATEGORY_EXTERN(LogLoading,	Log, All);
 NXCODEBASE_API DECLARE_LOG_CATEGORY_EXTERN(LogPatcher,	Log, All);
+NXCODEBASE_API DECLARE_LOG_CATEGORY_EXTERN(LogMode,		 Log, All);
 NXCODEBASE_API DECLARE_LOG_CATEGORY_EXTERN(LogUI,		Log, All);
 
 // Project
@@ -56,13 +57,15 @@ ELogVerbosity
 // Log On:1/Off:0 적용
 
 // Plugin
-#define Show_LogBase		1		// Common, 기반
-#define Show_LogUI			1		// UE 정의	
-#define Show_LogNet			1	
-#define Show_LogGolf		1	 
-#define Show_LogPatch		1
+#define Show_LogBase		1		
+#define Show_LogState		1		
+#define Show_LogTable		1		
+#define Show_LogNetwork		1	
 #define Show_LogLoading		1
-#define Show_LogMultiWin	1
+#define Show_LogPatcher		1
+#define Show_LogMode		1	 
+#define Show_LogUI			1		// UE 정의	
+
 
 // Project
 #define Show_LogGame		1	
@@ -91,12 +94,12 @@ ELogVerbosity
 
 // (if) 함수 
 #define NxLog(Category, Verb, Format, ...)		if (Show##_##Category) UE_LOG(Category, Verb, TEXT("%s .....%s"), *FString::Printf(Format, ##__VA_ARGS__ ),  *NX_LINE )
-#define NxLogFunc(Category, Verb)				if (Show##_##Category) UE_LOG(Category, Verb, TEXT(".....%s"), *NX_LINE)
-#define NxLogText(Category, Verb, Text)			if (Show##_##Category) UE_LOG(Category, Verb, TEXT("%s .....%s"), Text, *NX_LINE )
+#define NxLogFun(Category, Verb)				if (Show##_##Category) UE_LOG(Category, Verb, TEXT(".....%s"), *NX_LINE)
+#define NxLogTxt(Category, Verb, Text)			if (Show##_##Category) UE_LOG(Category, Verb, TEXT("%s .....%s"), Text, *NX_LINE )
 
 
-#define NxPrintFunc(Category)					NxLogFunc(Category,		Log)
-#define NxPrintText(Category, Text)				NxLogText(Category,		Log,		Text)
+#define NxPrintFunc(Category)					NxLogFun(Category,		Log)
+#define NxPrintTxt(Category, Text)				NxLogTxt(Category,		Log,		Text)
 
 #define NxPrintLog(Category, Format, ...)		NxLog(Category,			Log,		TEXT("%s"), *FString::Printf(Format, ##__VA_ARGS__ ))
 #define NxPrintDisplay(Category, Format, ...)	NxLog(Category,			Display,	TEXT("%s"), *FString::Printf(Format, ##__VA_ARGS__ ))
@@ -115,7 +118,7 @@ ELogVerbosity
 { \
 	if(!(Condition)) \
 	{ \
-		VxPrintError(LogBase, TEXT("[CheckReturn Failed] : %s"), TEXT(""#Condition"")); \
+		NxPrintError(LogBase, TEXT("[CheckReturn Failed] : %s"), TEXT(""#Condition"")); \
 		return __VA_ARGS__; \
 	} \
 }
