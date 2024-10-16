@@ -28,6 +28,7 @@ public class NxCodeBase : ModuleRules
         // 다른 모듈에 노출되지 않는 현재 모듈의 내부에만 포함할 파일에 대한 모든 경로 목록
         PrivateIncludePaths.AddRange(
 			new string[] {
+                ModuleDirectory,
 				// ... add other private include paths required here ...
 			}
 			);

@@ -1,0 +1,200 @@
+﻿<Window x:Class="PatchManifestClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PatchManifestClient"
+        mc:Ignorable="d"        
+        Title="PatchManifestClient - v.1.0" Height="600" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="PakDataTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Category}" />
+                <TextBlock Grid.Column="1" Text="{Binding Filename}" />
+                <TextBlock Grid.Column="2" Text="{Binding Filesize}" />
+                <TextBlock Grid.Column="3" Text="{Binding ChunkID}" />
+                <TextBlock Grid.Column="4" Text="{Binding CreateDate}" />
+                <TextBlock Grid.Column="5" Text="{Binding ModifyDate}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="LogDataTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding Message}" />
+                <TextBlock Grid.Column="1" Text="{Binding Tail}" />
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <Border Padding="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- 기준 폴더 정의-->
+            <StackPanel Grid.Row="0">
+
+                <TextBlock Text="Patch Path Define" Height="20" FontWeight="Bold" Background="#FFFFEA00" />
+                <CheckBox x:Name="IsSaveConfig" Content="Save Config" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+
+                <Grid Height="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="1" Text="Platform:"/>
+                    <ComboBox Grid.Column="2" Name="PlatformCombo" DisplayMemberPath="name" SelectedValuePath="value" Width="200" HorizontalAlignment="Left"  Margin="0,0,0,0" />
+                </Grid>
+
+                <TextBlock Padding="1" FontSize="6" />
+                <Grid Height="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="1" Text="Embedded Path:"/>
+                    <TextBox x:Name="EmbeddedPathTBox" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFD8D8D8" TextChanged="EmbeddedPathTBox_TextChanged"/>
+                    <Button Grid.Column="3" x:Name="EmbeddedFolderBtn" Content="..." Click="EmbeddedFolderBtn_Click" />
+                    <Button Grid.Column="4" x:Name="EmbeddedExplorerBtn" Content="e" Click="EmbeddedExplorerBtn_Click"/>
+                </Grid>
+                <TextBlock Padding="1" FontSize="6" />
+                <Grid Height="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="1" Text="Build Path:"/>
+                    <TextBox x:Name="BuildPathTBox" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFD8D8D8"  TextChanged="BuildPathTBox_TextChanged"/>
+                    <Button Grid.Column="3" x:Name="BuildFolderBtn" Content="..." Click="BuildFolderBtn_Click" />
+                    <Button Grid.Column="4" x:Name="BuildExplorerBtn" Content="e" Click="BuildExplorerBtn_Click"/>
+                </Grid>
+
+                <TextBlock Padding="1" FontSize="6" />
+
+            </StackPanel>
+
+            <!-- 패치 버전 출력 -->
+            <Grid Grid.Row="1">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="3*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0">
+                        <TextBlock Text="Patch Export" FontWeight="Bold" Background="#FFFFF500" />
+                        <TextBlock Padding="1" FontSize="6" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="1" Text="Patch Version:"/>
+                            <TextBox x:Name="PatchVersionTBox" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Stretch" Width="200" Background="#FFD8D8D8" />
+                        </Grid>
+
+                        <TextBlock Padding="1" FontSize="6" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="1" Text="File Version Path:"/>
+                            <TextBox x:Name="PatchVersionPathTBox" Grid.Column="2" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" Background="#FFD8D8D8" />
+                            <Button Grid.Column="3" x:Name="PatchVersionFolderBtn" Content="..." Click="PatchVersionFolderBtn_Click"/>
+                            <Button Grid.Column="4" x:Name="PatchVersionExplorerBtn" Content="e" Click="PatchVersionExplorerBtn_Click"/>
+                        </Grid>
+
+                        <TextBlock Padding="1" FontSize="6" />
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="221*"/>
+                                <ColumnDefinition Width="370*"/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="1" Text="File Export Path:"/>
+                            <TextBox x:Name="PatchExportPathTBox" Grid.Column="2" TextWrapping="Wrap" Background="#FFD8D8D8" Grid.ColumnSpan="2" />
+                            <Button Grid.Column="4" x:Name="PatchExportFolderBtn" Content="..." Click="PatchExportFolderBtn_Click"/>
+                            <Button Grid.Column="5" x:Name="PatchExportExplorerBtn" Content="e" Click="PatchExportExplorerBtn_Click"/>
+                        </Grid>
+                        <TextBlock Padding="1" FontSize="6" />
+                    </StackPanel>
+
+                    <Grid Grid.Row="1" >
+                        <ListView x:Name="PakListView" ItemTemplate="{StaticResource PakDataTemplate}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Width="80" DisplayMemberBinding="{Binding Category}" Header="Category" />
+                                    <GridViewColumn Width="280"  DisplayMemberBinding="{Binding Filename}" Header="Filename" />
+                                    <GridViewColumn Width="100"  DisplayMemberBinding="{Binding Filesize}" Header="Filesize" />
+                                    <GridViewColumn Width="80" DisplayMemberBinding="{Binding ChunkID}" Header="ChunkID" />
+                                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding CreateDate}" Header="CreateDate" />
+                                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding ModifyDate}" Header="ModifyDate" />
+                                </GridView>
+                            </ListView.View>
+
+                        </ListView>
+                    </Grid>
+
+                    <Grid Grid.Row="2" >
+                        <ListBox x:Name="LogListBox" ItemTemplate="{StaticResource LogDataTemplate}" />
+                    </Grid>
+
+                    <StackPanel  Grid.Row="3">
+                        <TextBlock Padding="1" FontSize="6" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Grid.Column="0" x:Name="PakClearBtn" Content="Clear Pak" Click="PakClearBtn_Click" />
+                            <Button Grid.Column="1" x:Name="LogClearBtn" Content="Clear Log" Click="LogClearBtn_Click" />
+                            <ProgressBar Grid.Column="2" x:Name="GenerateProgress"  />
+                            <Button Grid.Column="3" x:Name="GenerateBtn" Content="Generate" Click="GenerateBtn_Click" />
+
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
+
+    

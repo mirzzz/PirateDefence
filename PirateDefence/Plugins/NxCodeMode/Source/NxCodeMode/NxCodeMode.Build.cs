@@ -45,7 +45,9 @@ public class NxCodeMode : ModuleRules
 				"Slate",
 				"SlateCore",
 				// ... add private dependencies that you statically link with here ...					
-			}
+
+				"Projects",		// Plugin 코드 지원.
+            }
 			);
 		
 		

@@ -26,6 +26,11 @@
 			"LoadingPhase": "Default"
 		},
 		{
+			"Name": "NxCodePatcher",
+			"Type" : "Runtime",
+			"LoadingPhase" : "Default"
+		},
+		{
 			"Name": "NxCodeBaseEditor",
 			"Type" : "Editor",
 			"LoadingPhase" : "PostEngineInit"

@@ -5,12 +5,12 @@
 #include "NxLoadingUserWidgetSettings.h"
 #include "NxBaseLog.h"
 
-#define LOCTEXT_NAMESPACE "NxLoadingUserWidgetModule."
+#define LOCTEXT_NAMESPACE "NxLoadingUserWidgetModule"
 
 void FNxLoadingUserWidgetModule::StartupModule()
 {
-	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
-	NxPrintTxt(LogLoading, TEXT("[---------------------------------------------------- WidgetLoading Module Startup]"));
+	// 이 코드는 모듈이 메모리에 로드된 후에 실행됩니다. 정확한 타이밍은 각모듈 LoadingPhase/Type에 의해 .uplugin 파일에 지정됩니다.
+	NxPrintTxt(LogLoading, TEXT("[---------------------------------------------------- NxLoadingUserWidgetModule Module Startup]"));
 
 	UNxLoadingSplashSettings*  asyncLoading = GetMutableDefault<UNxLoadingSplashSettings>();
 	const UNxLoadingUserWidgetSettings* widgetLoading = GetDefault<UNxLoadingUserWidgetSettings>();
@@ -25,10 +25,8 @@ void FNxLoadingUserWidgetModule::StartupModule()
 
 void FNxLoadingUserWidgetModule::ShutdownModule()
 {
-	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
-	// we call this function before unloading the module.
-
-	NxPrintTxt(LogLoading, TEXT("[---------------------------------------------------- WidgetLoading Module Shutdown]"));
+	// 이 기능은 모듈을 정리하기 위해 종료 중에 호출될 수 있습니다. 동적 재로딩을 지원하는 모듈의 경우	모듈을 언로딩하기 전에 이 기능을 호출합니다.
+	NxPrintTxt(LogLoading, TEXT("[---------------------------------------------------- NxLoadingUserWidgetModule Module Shutdown]"));
 }
 
 #undef LOCTEXT_NAMESPACE

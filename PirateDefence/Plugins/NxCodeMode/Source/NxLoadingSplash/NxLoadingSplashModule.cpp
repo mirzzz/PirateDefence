@@ -18,22 +18,7 @@
 
 void FNxLoadingSplashModule::StartupModule()
 {	
-	NxPrintTxt(LogLoading, TEXT("[----------------------------------------------------- LoadingSplash Module Startup]"));
-	FString launchDir = FPaths::LaunchDir();
-	FString engineDir = FPaths::EngineDir();
-	NxPrintLog(LogLoading, TEXT("[ Path::LaunchDir--------------------Absolute > %s"), *launchDir);
-	NxPrintLog(LogLoading, TEXT("[ Path::EngineDir---------------------------- > %s"), *engineDir);
-
-	TSharedPtr<IPlugin> plugin = IPluginManager::Get().FindPlugin(TEXT("VxLoading"));
-	if (plugin.IsValid())
-	{
-		FString pluginBaseDir	 = plugin->GetBaseDir();
-		FString pluginContentDir = plugin->GetContentDir();
-
-		NxPrintLog(LogLoading, TEXT("[ Path::PluginBaseDir------------------------ > %s"), *pluginBaseDir);
-		NxPrintLog(LogLoading, TEXT("[ Path::PluginContentDir--------------------- > %s"), *pluginContentDir);
-	}
-	NxPrintTxt(LogLoading, TEXT("[----------------------------------------------------------------------------------]"));
+	NxPrintTxt(LogLoading, TEXT("[----------------------------------------------------- NxLoadingSplash Module Startup]"));
 
 	// 모듈이 메모리에 로드된 후에 실행됩니다. 정확한 타이밍은 모듈별 .uplugin 파일에 지정되어 있습니다.
 	if (!IsRunningDedicatedServer() && FSlateApplication::IsInitialized())
@@ -75,7 +60,7 @@ void FNxLoadingSplashModule::ShutdownModule()
 		// E_ActiveLoadingType::ALT_Widget
 	}
 		
-	NxPrintTxt(LogLoading, TEXT("[----------------------------------------------------- LoadingSplash Module Shutdown]"));
+	NxPrintTxt(LogLoading, TEXT("[----------------------------------------------------- NxLoadingSplash Module Shutdown]"));
 }
 
 bool FNxLoadingSplashModule::IsGameModule() const
