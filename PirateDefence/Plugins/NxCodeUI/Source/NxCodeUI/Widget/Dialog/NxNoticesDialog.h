@@ -46,9 +46,9 @@ protected:
 	float OpenAddedTime;
 
 public:
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.Notices", meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.Notices", meta = (BindWidget))
 	TObjectPtr<class UCommonBorder> Border_PopupBackground;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.Notices", meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.Notices", meta = (BindWidget))
 	TObjectPtr<class UCommonTextBlock> Text_Message;
 };

@@ -108,7 +108,7 @@ bool UNxCodeUISubsystem::Create(class UWorld* InWorld)
 		UGameInstance* GameInstance = GetGameInstance();
 		UNxCodeWindowSubsystem* NxCodeWindowSubsystem = GameInstance->GetSubsystem<UNxCodeWindowSubsystem>();
 
-		auto SubclassMainFrame = settings->SubclassMainFrame.LoadSynchronous();
+		auto SubclassMainFrame = settings->SubclassRootFrame.LoadSynchronous();
 		UNxFrameWidget* newUIFrame = CreateWidget<UNxFrameWidget>(InWorld, SubclassMainFrame);
 		FVector2D ScreenSize;
 		GEngine->GameViewport->GetViewportSize(ScreenSize);
@@ -119,7 +119,7 @@ bool UNxCodeUISubsystem::Create(class UWorld* InWorld)
 		//추가
 		for (int i = 1; i < UIFrames.Num(); ++i)
 		{
-			auto SubclassCommonFrame = settings->SubclassCommonFrame.LoadSynchronous();
+			auto SubclassCommonFrame = settings->SubclassAttachFrame.LoadSynchronous();
 			newUIFrame = CreateWidget<UNxFrameWidget>(InWorld, SubclassCommonFrame);
 			//UVxMultiWindowsLibrary::AddWidgetToWindow(newUIFrame, MultiWindows[i - 1], 0);
 			UNxCodeWindowsLibrary::AddWidgetToWindow(newUIFrame, UIFrames[i]->GetMultiWindow(), 0);
@@ -576,7 +576,7 @@ bool UNxCodeUISubsystem::OpenIndicator(uint8 FramePos)
 	if (nullptr == UIBaseWnd)
 		return false;
 
-	IndicatorUIWnds.Add(FramePos, Cast<UNxProgressIndicatorDialog>(UIBaseWnd));
+	IndicatorUIWnds.Add(FramePos, Cast<UNxWaitingDialog>(UIBaseWnd));
 
 	return true;
 }
@@ -637,7 +637,7 @@ UNxFrameWidget* UNxCodeUISubsystem::AddMultiWindow(class UWorld* InWorld,
 	if (nullptr == settings)
 		return nullptr;
 
-	auto subclassUI = settings->SubclassCommonFrame.LoadSynchronous();
+	auto subclassUI = settings->SubclassAttachFrame.LoadSynchronous();
 	UNxFrameWidget* newUIFrame = CreateWidget<UNxFrameWidget>(InWorld, subclassUI);
 
 	UGameInstance* GameInstance = GetGameInstance();

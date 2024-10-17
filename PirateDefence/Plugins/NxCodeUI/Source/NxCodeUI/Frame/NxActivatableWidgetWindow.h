@@ -77,16 +77,15 @@ protected:
 
 	//Widget
 public:
-	void	Load(FVxUI_WndJson& InJson);
 	UPanelWidget* GetSlot(const FString& InName);
 
 	void	SetPosition(FVector2D InPos);
 	void	SetSize(FVector2D InSize);
 
 	//protected:
-	UPROPERTY(BlueprintReadOnly, Category = "VxUI", meta = (BindWidgetOptional))
+	UPROPERTY(BlueprintReadOnly, Category = CodeUI, meta = (BindWidgetOptional))
 	TObjectPtr<UCanvasPanel> RootCanvasPanel;
 
-	UPROPERTY(BlueprintReadOnly, Category = "VxUI", meta = (BindWidgetOptional))
+	UPROPERTY(BlueprintReadOnly, Category = CodeUI, meta = (BindWidgetOptional))
 	TObjectPtr<class UCommonBorder> RootBorder;
 };

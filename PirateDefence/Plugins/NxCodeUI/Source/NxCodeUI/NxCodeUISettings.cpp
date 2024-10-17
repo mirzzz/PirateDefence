@@ -50,12 +50,12 @@ UNxCodeUISettings::UNxCodeUISettings(const FObjectInitializer& ObjectInitializer
 
 FText UNxCodeUISettings::GetSectionText() const
 {
-	return LOCTEXT("VxUISettingsName", "Plugin VxUI");
+	return LOCTEXT("NxCodeUISettingsName", "Plugin NxCodeUI");
 }
 
 FText UNxCodeUISettings::GetSectionDescription() const
 {
-	return LOCTEXT("VxUISettingsDescription", "Kakao-PlugIn VxUI 설정");
+	return LOCTEXT("NxCodeUISettingsDescription", "UI 시스템에 필요한 내용 설정");
 }
 #endif
 

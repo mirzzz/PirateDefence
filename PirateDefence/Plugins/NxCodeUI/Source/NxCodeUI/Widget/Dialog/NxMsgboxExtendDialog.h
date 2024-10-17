@@ -98,24 +98,24 @@ private:
 	TArray<TObjectPtr<class UNxButtonNormal>> ButtonNormals;
 
 public:
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.MessageBox", meta = (BindWidgetOptional))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.MsgBoxExtend", meta = (BindWidgetOptional))
 	TObjectPtr<class UBackgroundBlur> BackgroundBlur;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.MessageBox", meta = (BindWidgetOptional))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.MsgBoxExtend", meta = (BindWidgetOptional))
 	TObjectPtr<class UCommonBorder> Border_PopupBackground;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.MessageBox", meta = (BindWidgetOptional))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.MsgBoxExtend", meta = (BindWidgetOptional))
 	TObjectPtr<class UCommonTextBlock> Text_Title;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.MessageBox", meta = (BindWidgetOptional))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.MsgBoxExtend", meta = (BindWidgetOptional))
 	TObjectPtr<class UCommonTextBlock> Text_Message;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.MessageBox", meta = (BindWidgetOptional))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.MsgBoxExtend", meta = (BindWidgetOptional))
 	TObjectPtr<class UNxButtonNormal> Button_0;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.MessageBox", meta = (BindWidgetOptional))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.MsgBoxExtend", meta = (BindWidgetOptional))
 	TObjectPtr<class UNxButtonNormal> Button_1;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.MessageBox", meta = (BindWidgetOptional))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.MsgBoxExtend", meta = (BindWidgetOptional))
 	TObjectPtr<class UNxButtonNormal> Button_2;
 };

@@ -57,18 +57,18 @@ private:
 	FOnMsgBoxButtonDelegate OnFuncTwo;
 
 public:
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.MessageBox", meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.MsgBox", meta = (BindWidget))
 	TObjectPtr<class UCommonBorder> Border_BG;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.MessageBox", meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.MsgBox", meta = (BindWidget))
 	TObjectPtr<class UCommonTextBlock> Text_Title;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.MessageBox", meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.MsgBox", meta = (BindWidget))
 	TObjectPtr<class UCommonRichTextBlock> Text_Message;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.MessageBox", meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.MsgBox", meta = (BindWidget))
 	TObjectPtr<class UNxButtonNormal> Btn_One;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Vx.MessageBox", meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, Category = "Nx.MsgBox", meta = (BindWidget))
 	TObjectPtr<class UNxButtonNormal> Btn_Two;
 };

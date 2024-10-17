@@ -13,7 +13,7 @@
 #include "NxMsgboxDialog.h"
 #include "NxMsgboxExtendDialog.h"
 #include "NxNoticesDialog.h"
-#include "NxProgressIndicatorDialog.h"
+#include "NxWaitingDialog.h"
 #include "NxUIEnum.h"
 
 #include "NxCodeUISubsystem.generated.h"
@@ -179,13 +179,13 @@ protected:
 	//Popup
 	UPROPERTY() FString BPPath;
 	UPROPERTY() TSubclassOf<UNxMsgboxDialog> MessageBoxClassOf;
-	UPROPERTY() TSubclassOf<UNxProgressIndicatorDialog> ProgressIndicatorClassOf;
+	UPROPERTY() TSubclassOf<UNxWaitingDialog> ProgressIndicatorClassOf;
 	UPROPERTY() TArray<TSubclassOf<UNxMsgboxExtendDialog>> MessageBox2ClassOfs;
 	UPROPERTY() TSubclassOf<UNxNoticesDialog> NoticesClassOf;
 
 	// 
-	UPROPERTY() TObjectPtr<UNxProgressIndicatorDialog> IndicatorUIWnd;
-	UPROPERTY()	TMap<uint8, TObjectPtr<UNxProgressIndicatorDialog>> IndicatorUIWnds;
+	UPROPERTY() TObjectPtr<UNxWaitingDialog> IndicatorUIWnd;
+	UPROPERTY()	TMap<uint8, TObjectPtr<UNxWaitingDialog>> IndicatorUIWnds;
 
 	// Table ListUp
 	TMap<E_WidgetID, struct FNxTable_UI*>		WidgetTable;

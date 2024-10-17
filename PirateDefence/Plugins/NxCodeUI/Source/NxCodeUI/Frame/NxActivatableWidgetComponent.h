@@ -8,7 +8,6 @@
 
 class USizeBox;
 class UCanvasPanel;
-class FVxUI_WndJson;
 
 /**
  * 
@@ -41,9 +40,9 @@ public:
 	UFUNCTION()
 	virtual FEventReply ProcessMouseDoubleClick(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
 
-	//~UVxUIBaseActivatableWidget interface
+	//~UNxActivatableWidgetBase interface
 	virtual TOptional<FUIInputConfig> GetDesiredInputConfig() const override;
-	//~End of UVxUIBaseActivatableWidget interface
+	//~End of UNxActivatableWidgetBase interface
 
 	virtual bool Open(bool bHorizontal) override;
 	virtual void Close() override;
@@ -57,10 +56,4 @@ private:
 	virtual void InitCollectionChild() override;		// Anim, Widget 정보 수집
 	virtual void InitLocalization()  override;
 	virtual void UpdateStyle();
-
-protected:
-	//// 이 UI가 활성화되어 있는 동안 사용할 원하는 입력 모드입니다. 
-	////	- 예를 들어 키 누름이 여전히 게임/플레이어 컨트롤러에 도달하도록 할것인지 여부.
-	//UPROPERTY(EditDefaultsOnly, Category = Input)
-	//EVxUI_InputMode InputConfig = EVxUI_InputMode::Default;
 };

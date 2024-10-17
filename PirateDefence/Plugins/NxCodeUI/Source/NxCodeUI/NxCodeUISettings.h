@@ -34,7 +34,7 @@ public:
 /**
  * 
  */
-UCLASS(Config = Plugin, DefaultConfig, meta = (DisplayName = "UISettings"))
+UCLASS(Config = Plugin, DefaultConfig, meta = (DisplayName = "CodeUISettings"))
 class NXCODEUI_API UNxCodeUISettings : public UDeveloperSettings
 {
 	GENERATED_BODY()
@@ -65,10 +65,10 @@ public:
 	FString BPPath;
 
 	UPROPERTY(config, EditAnywhere, Category = CodeUI)
-	TSoftClassPtr<class UNxFrameWidget> SubclassMainFrame;
+	TSoftClassPtr<class UNxFrameWidget> SubclassRootFrame;
 
 	UPROPERTY(config, EditAnywhere, Category = CodeUI)
-	TSoftClassPtr<class UNxFrameWidget> SubclassCommonFrame;
+	TSoftClassPtr<class UNxFrameWidget> SubclassAttachFrame;
 
 	UPROPERTY(config, EditAnywhere, Category = CodeUI)
 	TSoftClassPtr<class UNxMsgboxDialog> MessageBoxDlg;
@@ -86,7 +86,7 @@ public:
 	TSoftClassPtr<class UNxNoticesDialog> NoticesDlg;
 
 	UPROPERTY(config, EditAnywhere, Category = CodeUI)
-	TSoftClassPtr<class UNxProgressIndicatorDialog> ProgressIndicatorDlg;
+	TSoftClassPtr<class UNxWaitingDialog> ProgressIndicatorDlg;
 		
 	UPROPERTY(config, EditAnywhere, Category = CodeUI)
 	FString StyleName;

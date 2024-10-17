@@ -1,13 +1,13 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
-#include "NxProgressIndicatorDialog.h"
+#include "NxWaitingDialog.h"
 
-void UNxProgressIndicatorDialog::NativeOnInitialized()
+void UNxWaitingDialog::NativeOnInitialized()
 {
 	Super::NativeOnInitialized();
 }
 
-void UNxProgressIndicatorDialog::SetContext(const FString& InContext)
+void UNxWaitingDialog::SetContext(const FString& InContext)
 {
 	if (nullptr != Text_Context)
 	{

@@ -9,8 +9,6 @@
 
 class USizeBox;
 class UCanvasPanel;
-class FVxUI_WndJson;
-class UVxUIBaseComponent;
 
 /**
  * 
@@ -112,7 +110,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = Widget, meta = (editcondition = "bOverride_Padding"))
 	FMargin Widget_Padding;
 
-	UPROPERTY(BlueprintReadOnly, Category = "VxUI", meta = (BindWidgetOptional))
+	UPROPERTY(BlueprintReadOnly, Category = Widget, meta = (BindWidgetOptional))
 	TObjectPtr<USizeBox> RootSizeBox;
 
 	FOverrideInputKeyHandler BeforeInputKeyHandler;

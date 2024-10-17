@@ -256,11 +256,6 @@ void UNxActivatableWidgetWindow::UpdateStyle()
 	}
 }
 
-
-void	UNxActivatableWidgetWindow::Load(FVxUI_WndJson& InJson)
-{
-}
-
 void	UNxActivatableWidgetWindow::SetPosition(FVector2D InPos)
 {
 	if (nullptr != RootCanvasPanel)
