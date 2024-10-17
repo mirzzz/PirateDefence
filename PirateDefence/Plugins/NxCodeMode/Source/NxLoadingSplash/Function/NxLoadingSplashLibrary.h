@@ -3,13 +3,13 @@
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "NxFunc_LoadingSplash.generated.h"
+#include "NxLoadingSplashLibrary.generated.h"
  
 /**
  * Splash Loading Function Library
  */
 UCLASS()
-class NXLOADINGSPLASH_API UNxFunc_LoadingSplash : public UBlueprintFunctionLibrary
+class NXLOADINGSPLASH_API UNxLoadingSplashLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 private:

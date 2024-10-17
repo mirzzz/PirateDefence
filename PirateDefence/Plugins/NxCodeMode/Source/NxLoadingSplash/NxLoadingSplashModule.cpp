@@ -11,7 +11,7 @@
 #include "SLetterboxLayout.h"
 #include "SSidebarLayout.h"
 #include "SDualSidebarLayout.h"
-#include "NxFunc_LoadingSplash.h"
+#include "NxLoadingSplashLibrary.h"
 #include "NxBaseLog.h"
 
 #define LOCTEXT_NAMESPACE "NxLoadingSplashModule"
@@ -81,7 +81,7 @@ void FNxLoadingSplashModule::PreSetupLoadingScreen()
 	const bool bUse = settings->bUseAsyncLoading;
 	if (bUse)
 	{
-		const bool bIsEnableLoadingScreen = UNxFunc_LoadingSplash::GetIsEnableLoadingScreen();
+		const bool bIsEnableLoadingScreen = UNxLoadingSplashLibrary::GetIsEnableLoadingScreen();
 		if (bIsEnableLoadingScreen)
 		{
 			bIsStartupLoadingScreen = false;
@@ -107,9 +107,9 @@ void FNxLoadingSplashModule::SetupLoadingScreen(const FNxLoadingSplashScreen& Lo
 		moviesList.Empty();
 
 		// 유효한 경우 특정 movie를 표시하고, 그렇지 않으면 원본 movie 목록을 표시합니다.
-		if (LoadingScreenSettings.MoviePaths.IsValidIndex(UNxFunc_LoadingSplash::GetDisplayMovieIndex()))
+		if (LoadingScreenSettings.MoviePaths.IsValidIndex(UNxLoadingSplashLibrary::GetDisplayMovieIndex()))
 		{
-			moviesList.Add(LoadingScreenSettings.MoviePaths[UNxFunc_LoadingSplash::GetDisplayMovieIndex()]);
+			moviesList.Add(LoadingScreenSettings.MoviePaths[UNxLoadingSplashLibrary::GetDisplayMovieIndex()]);
 		}
 		else
 		{

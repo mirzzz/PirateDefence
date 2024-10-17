@@ -3,12 +3,12 @@
 #pragma once
 
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "NxFunction_Patcher.generated.h"
+#include "NxCodePatcherLibrary.generated.h"
 
 
 // PatchSettgings 관련 코드
 UCLASS()
-class NXCODEPATCHER_API UNxFunction_Patcher : public UBlueprintFunctionLibrary
+class NXCODEPATCHER_API UNxCodePatcherLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_UCLASS_BODY()
 

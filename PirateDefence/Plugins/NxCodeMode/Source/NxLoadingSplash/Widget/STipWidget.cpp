@@ -2,7 +2,7 @@
 #include "STipWidget.h"
 #include "NxLoadingSplashSettings.h"
 #include "Widgets/Text/STextBlock.h"
-#include "NxFunc_LoadingSplash.h"
+#include "NxLoadingSplashLibrary.h"
 
 void STipWidget::Construct(const FArguments& InArgs, const FNxTipSettings& Settings)
 {
@@ -12,9 +12,9 @@ void STipWidget::Construct(const FArguments& InArgs, const FNxTipSettings& Setti
 		
 		if (Settings.bSetDisplayTipTextManually == true)
 		{			
-			if (Settings.TipText.IsValidIndex(UNxFunc_LoadingSplash::GetDisplayTipTextIndex()))
+			if (Settings.TipText.IsValidIndex(UNxLoadingSplashLibrary::GetDisplayTipTextIndex()))
 			{
-				TipIndex = UNxFunc_LoadingSplash::GetDisplayTipTextIndex();
+				TipIndex = UNxLoadingSplashLibrary::GetDisplayTipTextIndex();
 			}
 		}
 

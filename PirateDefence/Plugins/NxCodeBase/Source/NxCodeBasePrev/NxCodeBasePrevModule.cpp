@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "NxCodeBasePrevModule.h"
 #include "Modules/ModuleManager.h"
@@ -6,7 +6,7 @@
 DEFINE_LOG_CATEGORY(LogCodeBasePrev);
 
 #define LOCTEXT_NAMESPACE "NxCodeBasePrev"
-
+ 
 void FNxCodeBasePrevModule::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module

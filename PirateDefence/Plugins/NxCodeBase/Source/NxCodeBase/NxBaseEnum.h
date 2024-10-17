@@ -17,7 +17,7 @@ enum class E_DevelopmentType : uint8
 };
 
 
-namespace Nx_EnumUtil
+namespace Nx_UtilityEnum
 {
 	// Enum <> String(Name) 변환 : UENUM(BlueprintType) 일경우 지원.
 	//-----------------------------------------------------------------------------
@@ -101,12 +101,12 @@ namespace Nx_EnumUtil
 }
 
 // Enum <> String
-#define NxEnumType_GetString(enumT, enumV)		Nx_EnumUtil::EnumToString<enumT::Type>(enumV)			// namespace::type (Enum)
-#define NxEnumType_GetDisplayName(enumT, enumV)	Nx_EnumUtil::EnumToDisplayName<enumT::Type>(enumV)		// namespace::type (Enum)
-#define NxEnumType_GetEnum(enumT, stringV)		Nx_EnumUtil::StringToEnum<enumT::Type>(stringV)		
+#define NxEnumType_GetString(enumT, enumV)		Nx_UtilityEnum::EnumToString<enumT::Type>(enumV)			// namespace::type (Enum)
+#define NxEnumType_GetDisplayName(enumT, enumV)	Nx_UtilityEnum::EnumToDisplayName<enumT::Type>(enumV)		// namespace::type (Enum)
+#define NxEnumType_GetEnum(enumT, stringV)		Nx_UtilityEnum::StringToEnum<enumT::Type>(stringV)		
 
-#define NxEnum_GetString(enumT, enumV)			Nx_EnumUtil::EnumToString<enumT>(enumV)		
-#define NxEnum_GetDisplayName(enumT, enumV)		Nx_EnumUtil::EnumToDisplayName<enumT>(enumV)		
-#define NxEnum_GetEnum(enumT, stringV)			Nx_EnumUtil::StringToEnum<enumT>(stringV)		
+#define NxEnum_GetString(enumT, enumV)			Nx_UtilityEnum::EnumToString<enumT>(enumV)		
+#define NxEnum_GetDisplayName(enumT, enumV)		Nx_UtilityEnum::EnumToDisplayName<enumT>(enumV)		
+#define NxEnum_GetEnum(enumT, stringV)			Nx_UtilityEnum::StringToEnum<enumT>(stringV)		
 
-#define NxEnum_GetAnsiChar(enumT, enumV)		TCHAR_TO_ANSI(*Nx_EnumUtil::EnumToString<enumT>(enumV))
+#define NxEnum_GetAnsiChar(enumT, enumV)		TCHAR_TO_ANSI(*Nx_UtilityEnum::EnumToString<enumT>(enumV))

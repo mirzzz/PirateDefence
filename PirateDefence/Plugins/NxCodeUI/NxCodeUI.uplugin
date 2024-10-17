@@ -19,6 +19,25 @@
 			"Name": "NxCodeUI",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "NxCodeUIEditor",
+			"Type" : "Editor",
+			"LoadingPhase" : "PostEngineInit"
+		}
+	],
+	"Plugins" : [
+		{
+			"Name": "NxCodeBase",
+				"Enabled" : true
+		},
+		{
+			"Name": "NxCodeWindows",
+			"Enabled" : true
+		},
+		{
+			"Name": "CommonUI",
+			"Enabled" : true
 		}
 	]
 }

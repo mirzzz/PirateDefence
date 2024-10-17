@@ -1,0 +1,48 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.1.5",
+	"FriendlyName": "NxCodeWindows",
+	"Description": "One GameInstance: Multi Windows x Multi Views (Multi Monitors Support). Just use the Blueprints.",
+	"Category": "Nx",
+	"CreatedBy": "Nx, Inc.",
+	"CreatedByURL": "https://gitlab.com/UE4MarketplaceSubmission_Public/multiwindows4ue4_public",
+	"DocsURL": "https://gitlab.com/UE4MarketplaceSubmission_Public/multiwindows4ue4_public",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/8cff7837a1214799ba4c628949c51dcb",
+	"SupportURL": "https://gitlab.com/UE4MarketplaceSubmission_Public/multiwindows4ue4_public",
+	"CanContainContent": true,
+	"EnabledByDefault": true,
+	"Modules": [
+		{
+			"Name": "NxCodeWindows",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"PlatformAllowList": [
+				"Mac",
+				"Linux",
+				"Win64"
+			]
+		},
+		{
+			"Name": "NxCodeWindowsEditor",
+			"Type": "Editor",
+			"LoadingPhase": "PreDefault",
+			"PlatformAllowList": [
+				"Mac",
+				"Linux",
+				"Win64"
+			]
+		}
+	],
+
+	"Plugins": [
+		{
+			"Name": "NxCodeBase",
+			"Enabled" : true
+		},
+		{
+			"Name": "CommonUI",
+			"Enabled": true
+		}
+	]
+}

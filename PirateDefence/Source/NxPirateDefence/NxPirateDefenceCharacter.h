@@ -14,6 +14,7 @@ class UInputAction;
 struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
+#define Show_LogTemplateCharacter 1
 
 UCLASS(config=Game)
 class ANxPirateDefenceCharacter : public ACharacter

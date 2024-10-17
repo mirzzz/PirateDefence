@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+ï»¿// Copyright Epic Games, Inc. All Rights Reserved.
 
 using System.IO;
 using UnrealBuildTool;
@@ -9,23 +9,21 @@ public class NxCodeBase : ModuleRules
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 
-        // ´Ù¸¥ ¸ğµâ¿¡ ³ëÃâµÇ´Â ÆÄÀÏÀ» Æ÷ÇÔÇÒ ¸ğµç °æ·Î ¸ñ·Ï
+        // ë‹¤ë¥¸ ëª¨ë“ˆì— ë…¸ì¶œë˜ëŠ” íŒŒì¼ì„ í¬í•¨í•  ëª¨ë“  ê²½ë¡œ ëª©ë¡
         PublicIncludePaths.AddRange(
 			new string[] {
 				// ... add public include paths required here ...
 				ModuleDirectory,
-				// ¿ÜºÎ ¸ğµâ¿¡¼­ °æ·Î¸¦ ³ÖÁö ¾Ê°í Çì´õ ÆÄÀÏÀ» ¹Ù·Î Include ÇÏ·Á¸é °æ·Î Ãß°¡ ÇØÁÜ.
+				// ì™¸ë¶€ ëª¨ë“ˆì—ì„œ ê²½ë¡œë¥¼ ë„£ì§€ ì•Šê³  í—¤ë” íŒŒì¼ì„ ë°”ë¡œ Include í•˜ë ¤ë©´ ê²½ë¡œ ì¶”ê°€ í•´ì¤Œ.
                 Path.Combine(ModuleDirectory, "Frame"),
-                Path.Combine(ModuleDirectory, "Utility"),
-                Path.Combine(ModuleDirectory, "Function"),
-                Path.Combine(ModuleDirectory, "Table"),
-                Path.Combine(ModuleDirectory, "Settings"),
                 Path.Combine(ModuleDirectory, "Network"),
-                Path.Combine(ModuleDirectory, "Function"),                
+                Path.Combine(ModuleDirectory, "State"),
+                Path.Combine(ModuleDirectory, "Table"),
+                Path.Combine(ModuleDirectory, "Utility"),                
             }
-			);
+			); 
 
-        // ´Ù¸¥ ¸ğµâ¿¡ ³ëÃâµÇÁö ¾Ê´Â ÇöÀç ¸ğµâÀÇ ³»ºÎ¿¡¸¸ Æ÷ÇÔÇÒ ÆÄÀÏ¿¡ ´ëÇÑ ¸ğµç °æ·Î ¸ñ·Ï
+        // ë‹¤ë¥¸ ëª¨ë“ˆì— ë…¸ì¶œë˜ì§€ ì•ŠëŠ” í˜„ì¬ ëª¨ë“ˆì˜ ë‚´ë¶€ì—ë§Œ í¬í•¨í•  íŒŒì¼ì— ëŒ€í•œ ëª¨ë“  ê²½ë¡œ ëª©ë¡
         PrivateIncludePaths.AddRange(
 			new string[] {
                 ModuleDirectory,
@@ -34,8 +32,8 @@ public class NxCodeBase : ModuleRules
 			);
 
 
-        // Public Á¾¼Ó¼º ¸ğµâ ÀÌ¸§ ¸ñ·Ï(°æ·Î ÇÊ¿ä ¾øÀ½)(Public/Private Æ÷ÇÔÀÌ ÀÚµ¿À¸·Î ¼öÇàµÊ).
-        //	- ÀÌµéÀº Public ¼Ò½º ÆÄÀÏ¿¡ ÇÊ¿äÇÑ ¸ğµâÀÔ´Ï´Ù.
+        // Public ì¢…ì†ì„± ëª¨ë“ˆ ì´ë¦„ ëª©ë¡(ê²½ë¡œ í•„ìš” ì—†ìŒ)(Public/Private í¬í•¨ì´ ìë™ìœ¼ë¡œ ìˆ˜í–‰ë¨).
+        //	- ì´ë“¤ì€ Public ì†ŒìŠ¤ íŒŒì¼ì— í•„ìš”í•œ ëª¨ë“ˆì…ë‹ˆë‹¤.
         PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
@@ -44,13 +42,13 @@ public class NxCodeBase : ModuleRules
                 "Json",             // support json
 
                 // ... add other public dependencies that you statically link with here ...
-                // Á¾¼Ó¼º 
+                // ì¢…ì†ì„± 
                 "NxCodeBasePrev",			}
 			);
 
 
-        // Private Á¾¼Ó¼º ¸ğµâ ÀÌ¸§ ¸ñ·ÏÀÔ´Ï´Ù.
-        //	- Private ÄÚµå°¡ ÀÇÁ¸ÇÏ´Â ¸ğµâÀÌÁö¸¸ Public Include ÆÄÀÏ¿¡¼­´Â ¾Æ¹«°Íµµ ÀÇÁ¸ÇÏÁö ¾Ê½À´Ï´Ù.
+        // Private ì¢…ì†ì„± ëª¨ë“ˆ ì´ë¦„ ëª©ë¡ì…ë‹ˆë‹¤.
+        //	- Private ì½”ë“œê°€ ì˜ì¡´í•˜ëŠ” ëª¨ë“ˆì´ì§€ë§Œ Public Include íŒŒì¼ì—ì„œëŠ” ì•„ë¬´ê²ƒë„ ì˜ì¡´í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
         PrivateDependencyModuleNames.AddRange(
 			new string[]
 			{
@@ -74,19 +72,19 @@ public class NxCodeBase : ModuleRules
 			);
 
 
-        // ¸ğµâÀÇ Public Çì´õ°¡ ¾×¼¼½ºÇØ¾ß ÇÏ´Â Çì´õ ÆÄÀÏÀÌ Æ÷ÇÔµÈ ¸ğµâ ÀÌ¸§(°æ·Î´Â ÇÊ¿äÇÏÁö ¾ÊÀ½)ÀÇ ¸ñ·ÏÀÌÁö¸¸ °¡Á®¿À°Å³ª ¿¬°áÇÒ ÇÊ¿ä´Â ¾ø½À´Ï´Ù.
+        // ëª¨ë“ˆì˜ Public í—¤ë”ê°€ ì•¡ì„¸ìŠ¤í•´ì•¼ í•˜ëŠ” í—¤ë” íŒŒì¼ì´ í¬í•¨ëœ ëª¨ë“ˆ ì´ë¦„(ê²½ë¡œëŠ” í•„ìš”í•˜ì§€ ì•ŠìŒ)ì˜ ëª©ë¡ì´ì§€ë§Œ ê°€ì ¸ì˜¤ê±°ë‚˜ ì—°ê²°í•  í•„ìš”ëŠ” ì—†ìŠµë‹ˆë‹¤.
         PublicIncludePathModuleNames.AddRange(
             new string[] {
 
             });
 
-        // ¸ğµâÀÇ Privae Çì´õ°¡ ¾×¼¼½ºÇØ¾ß ÇÏ´Â Çì´õ ÆÄÀÏÀÌ Æ÷ÇÔµÈ ¸ğµâ ÀÌ¸§(°æ·Î´Â ÇÊ¿äÇÏÁö ¾ÊÀ½)ÀÇ ¸ñ·ÏÀÌÁö¸¸ °¡Á®¿À°Å³ª ¿¬°áÇÒ ÇÊ¿ä´Â ¾ø½À´Ï´Ù.
+        // ëª¨ë“ˆì˜ Privae í—¤ë”ê°€ ì•¡ì„¸ìŠ¤í•´ì•¼ í•˜ëŠ” í—¤ë” íŒŒì¼ì´ í¬í•¨ëœ ëª¨ë“ˆ ì´ë¦„(ê²½ë¡œëŠ” í•„ìš”í•˜ì§€ ì•ŠìŒ)ì˜ ëª©ë¡ì´ì§€ë§Œ ê°€ì ¸ì˜¤ê±°ë‚˜ ì—°ê²°í•  í•„ìš”ëŠ” ì—†ìŠµë‹ˆë‹¤.
         PrivateIncludePathModuleNames.AddRange(
             new string[] {
 
             });
 
-        // ·±Å¸ÀÓ¿¡ ÇÊ¿äÇÒ ¼ö ÀÖ´Â Ãß°¡ ¸ğµâ
+        // ëŸ°íƒ€ì„ì— í•„ìš”í•  ìˆ˜ ìˆëŠ” ì¶”ê°€ ëª¨ë“ˆ
         DynamicallyLoadedModuleNames.AddRange(
             new string[]
             {
@@ -94,7 +92,7 @@ public class NxCodeBase : ModuleRules
 			}
             );
 
-        // Editor ºôµå¿¡¸¸ Æ÷ÇÔµÇ±â¸¦ ¿øÇÒ °æ¿ì.
+        // Editor ë¹Œë“œì—ë§Œ í¬í•¨ë˜ê¸°ë¥¼ ì›í•  ê²½ìš°.
         if (Target.Type == TargetType.Editor)
         {
             PrivateDependencyModuleNames.AddRange(
@@ -108,9 +106,9 @@ public class NxCodeBase : ModuleRules
             );
         }
 
-        // À¯´ÏÆ¼ ºôµå ½Ã½ºÅÛ ±â´É ²ô±â 
-        //  - cpp file ¿©·¯ °³¸¦ ÇÏ³ª·Î ¹­¾î¼­ ÄÄÆÄÀÏ ¼Óµµ¸¦ ºü¸£°Ô ÇÏ´Â ºôµå ¿É¼Ç off ÇÔ.
-        //  - IWYU È®ÀÎ ½Ã¿¡µµ À¯¿ëÇÔ
+        // ìœ ë‹ˆí‹° ë¹Œë“œ ì‹œìŠ¤í…œ ê¸°ëŠ¥ ë„ê¸° 
+        //  - cpp file ì—¬ëŸ¬ ê°œë¥¼ í•˜ë‚˜ë¡œ ë¬¶ì–´ì„œ ì»´íŒŒì¼ ì†ë„ë¥¼ ë¹ ë¥´ê²Œ í•˜ëŠ” ë¹Œë“œ ì˜µì…˜ off í•¨.
+        //  - IWYU í™•ì¸ ì‹œì—ë„ ìœ ìš©í•¨
         bUseUnity = false;
     }
 }

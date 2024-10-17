@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+ï»¿// Copyright Epic Games, Inc. All Rights Reserved.
 
 using System.IO;
 using UnrealBuildTool;
@@ -14,7 +14,7 @@ public class NxCodeBasePrev : ModuleRules
 			{
 				// ... add public include paths required here ...
 				ModuleDirectory,
-				// ¿ÜºÎ ¸ğµâ¿¡¼­ °æ·Î¸¦ ³ÖÁö ¾Ê°í Çì´õ ÆÄÀÏÀ» ¹Ù·Î Include ÇÏ·Á¸é °æ·Î Ãß°¡ ÇØÁÜ.
+				// ì™¸ë¶€ ëª¨ë“ˆì—ì„œ ê²½ë¡œë¥¼ ë„£ì§€ ì•Šê³  í—¤ë” íŒŒì¼ì„ ë°”ë¡œ Include í•˜ë ¤ë©´ ê²½ë¡œ ì¶”ê°€ í•´ì¤Œ.
                 //Path.Combine(ModuleDirectory, "Public"),
             }
 		);
@@ -67,11 +67,11 @@ public class NxCodeBasePrev : ModuleRules
             {
 				// ... add any modules that your module loads dynamically here ...
 			}
-		);
+		); 
 
-        // À¯´ÏÆ¼ ºôµå ½Ã½ºÅÛ ±â´É ²ô±â 
-        //  - cpp file ¿©·¯ °³¸¦ ÇÏ³ª·Î ¹­¾î¼­ ÄÄÆÄÀÏ ¼Óµµ¸¦ ºü¸£°Ô ÇÏ´Â ºôµå ¿É¼Ç off ÇÔ.
-        //  - IWYU È®ÀÎ ½Ã¿¡µµ À¯¿ëÇÔ
+        // ìœ ë‹ˆí‹° ë¹Œë“œ ì‹œìŠ¤í…œ ê¸°ëŠ¥ ë„ê¸° 
+        //  - cpp file ì—¬ëŸ¬ ê°œë¥¼ í•˜ë‚˜ë¡œ ë¬¶ì–´ì„œ ì»´íŒŒì¼ ì†ë„ë¥¼ ë¹ ë¥´ê²Œ í•˜ëŠ” ë¹Œë“œ ì˜µì…˜ off í•¨.
+        //  - IWYU í™•ì¸ ì‹œì—ë„ ìœ ìš©í•¨
         bUseUnity = false;
     }
 }

@@ -5,7 +5,7 @@
 #include "Widgets/Images/SImage.h"
 #include "Widgets/Layout/SBorder.h"
 #include "Engine/Texture2D.h"
-#include "NxFunc_LoadingSplash.h"
+#include "NxLoadingSplashLibrary.h"
 #include "NxLoadingSplashModule.h"
 
 void SBackgroundWidget::Construct(const FArguments& InArgs, const FNxBackgroundSettings& Settings)
@@ -17,9 +17,9 @@ void SBackgroundWidget::Construct(const FArguments& InArgs, const FNxBackgroundS
 
 		if (Settings.bSetDisplayBackgroundManually == true)
 		{
-			if (Settings.Images.IsValidIndex(UNxFunc_LoadingSplash::GetDisplayBackgroundIndex()))
+			if (Settings.Images.IsValidIndex(UNxLoadingSplashLibrary::GetDisplayBackgroundIndex()))
 			{
-				ImageIndex = UNxFunc_LoadingSplash::GetDisplayBackgroundIndex();
+				ImageIndex = UNxLoadingSplashLibrary::GetDisplayBackgroundIndex();
 			}
 		}		
 		
